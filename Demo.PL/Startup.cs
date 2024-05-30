@@ -50,7 +50,7 @@ namespace Demo.PL
                 Options.Password.RequireLowercase = true;
             })
                 .AddEntityFrameworkStores<MvcAppDbContext>()
-                .AddDefaultTokenProviders(); //ht3ml token ll login,reset pw,2 factor auth
+                .AddDefaultTokenProviders(); //produce token for login,reset pw,2 factor auth
             //services.AddScoped<UserManager<ApplicationUser>>();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)//5las msh m7tag t add service llsign in /user/role managers kolhom
                 .AddCookie(Options =>
@@ -76,7 +76,7 @@ namespace Demo.PL
             app.UseHttpsRedirection(); //redirect url to https
             app.UseStaticFiles();
 
-            app.UseRouting();  //trteb elmiddleware byfr2
+            app.UseRouting();  //middleware order matters
             app.UseAuthentication();
             app.UseAuthorization();
             
@@ -90,5 +90,5 @@ namespace Demo.PL
     }
 }
 
-//P@ssw0rd //bnst5dmo ka test elpw
+//P@ssw0rd //Test for password
 //Pa$$w0rd
